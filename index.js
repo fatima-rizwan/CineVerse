@@ -603,31 +603,47 @@ const showData = (movieList) => {
 };
 
 
-const filterMovies = () => {
+function filterMovies() {
+    let filteredMovies;
 
-    let filteredMovies = movies;
+    if (currentSearch.trim() !== "") {
 
-    if (currentCategory !== 'All') {
-        filteredMovies = filteredMovies.filter((movie) => {
-            return movie.category === currentCategory;
-        });
-    }
+        // Search in all movies, regardless of selected category
+        filteredMovies = movies.filter(movie =>
+            movie.title.toLowerCase().includes(currentSearch.toLowerCase())
+        );
 
-    if (currentSearch.trim() !== '') {
-        filteredMovies = filteredMovies.filter((movie) => {
-            return movie.title
-                .toLowerCase()
-                .includes(currentSearch.trim().toLowerCase());
-        });
+        // Automatically detect and select the matching movie's category
+        if (filteredMovies.length > 0) {
+            currentCategory = filteredMovies[0].category;
+
+            document.querySelectorAll('.cont button').forEach(button => {
+                button.classList.toggle(
+                    'active',
+                    button.textContent.trim() === currentCategory
+                );
+            });
+        }
+
+    } else {
+
+        // When search is empty, show movies of selected category
+        filteredMovies = currentCategory === "All"
+            ? movies
+            : movies.filter(movie => movie.category === currentCategory);
     }
 
     showData(filteredMovies);
-};
+}
 
 
 categoryButtons.forEach((button) => {
 
     button.addEventListener('click', () => {
+
+        // Clear search when a category is selected
+        searchInput.value = "";
+        currentSearch = "";
 
         currentCategory = button.textContent.trim();
 
