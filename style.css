@@ -1,0 +1,599 @@
+
+/* ==============================
+   1. COLOR VARIABLES & RESET
+================================ */
+
+:root {
+    --bg-color: #10120D;
+    --nav-color: #1C2116;
+    --card-color: #191D14;
+    --olive: #59633A;
+    --gold: #D6B45A;
+    --text-color: #F5F1E6;
+    --muted-color: #B8B9A9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--olive);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+}
+
+
+/* ==============================
+   2. NAVBAR
+================================ */
+
+.navbar {
+    background-color: var(--nav-color);
+    min-height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+    border-bottom: 1px solid var(--olive);
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h2 {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.logo h2 span {
+    color: var(--gold);
+}
+
+
+/* ==============================
+   3. SEARCH BAR
+================================ */
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    width: 260px;
+    height: 42px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--olive);
+    border-radius: 25px;
+    padding: 0 42px 0 18px;
+    outline: none;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.search input::placeholder {
+    color: var(--muted-color);
+}
+
+.search input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 10px #D6B45A33;
+}
+
+.search span {
+    position: absolute;
+    right: 15px;
+    color: var(--gold);
+    font-size: 24px;
+    pointer-events: none;
+}
+
+
+/* ==============================
+   4. HERO SECTION
+================================ */
+
+
+
+.hero {
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.822) 0%,
+            rgba(6, 7, 5, 0.82) 45%,
+            rgba(10, 12, 8, 0.45) 100%
+        ),
+        linear-gradient(
+            to top,
+            rgba(10, 12, 8, 0.75),
+            transparent
+        ),
+        url("https://i.pinimg.com/1200x/03/85/bd/0385bddaf33bcebdf89f51c707ace5f1.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.hero-tag {
+    color: #D6B45A;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    color: #F5F1E6;
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #D6B45A;
+}
+
+.hero-text {
+    color: #D0D0C5;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #D6B45A;
+    color: #10120D;
+    padding: 13px 27px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #F0D47D;
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   5. SECTION HEADINGS
+================================ */
+
+.section-heading {
+    text-align: center;
+    padding: 25px 15px 10px;
+}
+
+.section-heading h2 {
+    color: var(--text-color);
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: var(--muted-color);
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+
+/* ==============================
+   6. CATEGORY BUTTONS
+================================ */
+
+.categories {
+    width: 100%;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    padding: 22px 25px;
+}
+
+.cont button {
+    flex: 0 0 auto;
+    padding: 13px 25px;
+    background-color: var(--nav-color);
+    color: #C5C5B5;
+    border: 1px solid var(--olive);
+    border-radius: 8px;
+    font-size: 15px ;
+    font-weight: 750;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cont button:hover {
+    background-color: var(--olive);
+    color: #FFFFFF;
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.cont button.active {
+    background-color: var(--gold);
+    color: var(--bg-color);
+    border-color: var(--gold);
+}
+
+
+/* ==============================
+   7. MOVIE SECTION
+================================ */
+
+.movie-section {
+    width: 100%;
+    padding: 10px 4% 50px;
+    scroll-margin-top: 20px;
+}
+
+.dom-cont {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 30px 20px;
+    width: 100%;
+    max-width: 1450px;
+    margin: 25px auto 0;
+}
+
+
+/* ==============================
+   8. MOVIE CARDS
+================================ */
+
+.main {
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+    background-color: var(--card-color);
+    border: 1px solid #303626;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.main:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 8px 25px #00000066;
+}
+
+.hover_effect {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.hover_effect .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius: 0;
+    transition: transform 0.4s ease;
+}
+
+.hover_effect:hover .img {
+    transform: scale(1.06);
+}
+
+.main h5 {
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 13px 12px 7px;
+    min-height: 42px;
+}
+
+.main p {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 12px 14px;
+}
+
+
+/* ==============================
+   9. TABLET RESPONSIVENESS
+================================ */
+
+@media (max-width: 1100px) {
+
+    .dom-cont {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 25px 16px;
+    }
+
+    .movie-section {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .hover_effect {
+        height: 260px;
+    }
+
+    .hero-decoration {
+        right: 7%;
+    }
+}
+
+
+/* ==============================
+   10. SMALL TABLETS
+================================ */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 75px;
+        padding: 12px 22px;
+    }
+
+    .logo h2 {
+        font-size: 23px;
+    }
+
+    .search input {
+        width: 220px;
+    }
+
+    .hero {
+        min-height: 310px;
+        padding: 40px 6%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-decoration {
+        font-size: 210px;
+        right: 4%;
+    }
+
+    .dom-cont {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px 14px;
+    }
+
+    .hover_effect {
+        height: 250px;
+    }
+
+    .main h5 {
+        font-size: 14px;
+    }
+
+    .cont {
+        gap: 10px;
+        padding: 20px 15px;
+    }
+}
+
+
+/* ==============================
+   11. MOBILE RESPONSIVENESS
+================================ */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        min-height: 68px;
+        padding: 12px 15px;
+        gap: 10px;
+    }
+
+    .logo h2 {
+        font-size: 19px;
+        letter-spacing: 1px;
+    }
+
+    .search input {
+        width: 155px;
+        height: 37px;
+        font-size: 11px;
+        padding-left: 12px;
+    }
+
+    .search span {
+        font-size: 21px;
+        right: 12px;
+    }
+
+    .hero {
+        min-height: 290px;
+        padding: 35px 22px;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+        max-width: 300px;
+    }
+
+    .hero-btn {
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+
+    .hero-decoration {
+        font-size: 160px;
+        right: 0;
+    }
+
+    .section-heading {
+        padding-top: 23px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    .cont {
+        gap: 9px;
+        padding: 17px 10px;
+    }
+
+    .cont button {
+        padding: 9px 13px;
+        font-size: 11px;
+        border-radius: 7px;
+    }
+
+    .movie-section {
+        padding: 5px 12px 35px;
+    }
+
+    .dom-cont {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 12px;
+        margin-top: 18px;
+    }
+
+    .hover_effect {
+        height: 220px;
+    }
+
+    .main {
+        border-radius: 8px;
+    }
+
+    .main h5 {
+        font-size: 13px;
+        margin: 10px 8px 6px;
+        min-height: 36px;
+    }
+
+    .main p {
+        font-size: 11px;
+        margin: 0 8px 12px;
+    }
+}
+
+
+/* ==============================
+   12. EXTRA SMALL MOBILE
+================================ */
+
+@media (max-width: 350px) {
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo h2 {
+        font-size: 16px;
+    }
+
+    .search input {
+        width: 130px;
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .dom-cont {
+        gap: 15px 8px;
+    }
+
+    .hover_effect {
+        height: 185px;
+    }
+
+    .main h5 {
+        font-size: 12px;
+    }
+
+    .cont button {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 450px;
+        padding: 50px 6%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+}

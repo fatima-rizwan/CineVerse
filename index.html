@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse | Discover Movies</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description" content="Explore movies across different genres and discover your next favorite movie with CineVerse.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="logo">
+            <h2>CINE<span>VERSE</span></h2>
+        </div>
+
+        <div class="search">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search movies..."
+                aria-label="Search movies"
+            >
+            <span aria-hidden="true">⌕</span>
+        </div>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+    <div class="hero-content">
+        <p class="hero-tag">YOUR WORLD OF CINEMA</p>
+
+        <h1>
+            Discover Movies.<br>
+            <span>Experience Stories.</span>
+        </h1>
+
+        <p class="hero-text">
+            Explore movies across genres and find your next
+            unforgettable watch.
+        </p>
+
+        <a href="#categories" class="hero-btn">Explore Collection</a>
+    </div>
+</section>
+
+
+    <!-- Movie Categories -->
+    <section class="categories" id="categories">
+
+        <div class="section-heading">
+            <h2>Explore Categories</h2>
+            <p>Find movies according to your mood</p>
+        </div>
+
+        <div class="cont">
+
+            <button id="All" class="active" type="button">All</button>
+            <button id="Action" type="button">Action</button>
+            <button id="Thriller" type="button">Thriller</button>
+            <button id="Animation" type="button">Animation</button>
+            <button id="Horror" type="button">Horror</button>
+            <button id="Mystery" type="button">Mystery</button>
+            <button id="Mind-Bending" type="button">Mind-Bending</button>
+            <button id="Sci-Fi" type="button">Sci-Fi</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Movie Collection -->
+    <main class="movie-section" id="movies">
+
+        <div class="section-heading">
+            <h2>Discover Your Next Movie</h2>
+            <p>Handpicked movies for every movie lover</p>
+        </div>
+
+        <div class="dom-cont"></div>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="./index.js"></script>
+
+</body>
+</html>
